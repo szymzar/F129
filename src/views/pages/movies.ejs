@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<div class="movie-details">
+    <h1><%= movie.title %></h1>
+    <h2><%= movie.author %> (<%= movie.year %>)</h2>
+
+    <p><b>Gatunek:</b> <%= movie.genre %></p>
+    <p><b>Kategoria wiekowa:</b> <%= movie.ageCategory %><%= !isNaN(parseInt(movie.ageCategory)) ? '+' : '' %></p>
+
+    <p><b>Opis:</b><br>
+    <%= movie.description %>
+    </p>
+
+    <p><b>Recenzja:</b><br>
+    <%= movie.review %>
+    </p>
+
+    <div class="movie-actions">
+        <a href="/edit/<%= movie._id %>" class="button">Edytuj</a>
+        <form action="/movies/<%= movie._id %>/delete" method="POST" style="display:inline;">
+            <button type="submit" class="delete">Usuń</button>
+        </form>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

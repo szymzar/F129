@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<a href="/add" class="button">Dodaj nowy film</a>
+
+<form action="/" method="GET">
+    <input type="text" name="genre" placeholder="Filtruj po gatunku..." value="<%= query.genre || '' %>">
+    
+    <select name="sortBy">
+        <option value="">Sortuj po...</option>
+        <option value="title" <%= query.sortBy === 'title' ? 'selected' : '' %>>Tytuł</option>
+        <option value="year" <%= query.sortBy === 'year' ? 'selected' : '' %>>Rok</option>
+    </select>
+
+    <select name="order">
+        <option value="asc" <%= query.order === 'asc' ? 'selected' : '' %>>Rosnąco</option>
+        <option value="desc" <%= query.order === 'desc' ? 'selected' : '' %>>Malejąco</option>
+    </select>
+
+    <button type="submit">Filtruj/Sortuj</button>
+</form>
+
+<ul>
+    <% movies.forEach(movie => { %>
+        <li>
+            <a href="/movies/<%= movie._id %>">
+                <b><%= movie.title %></b>
+                – <%= movie.genre %>
+                – <%= movie.ageCategory %><%= !isNaN(parseInt(movie.ageCategory)) ? '+' : '' %>
+            </a>
+        </li>
+    <% }) %>
+</ul>
+
+<%- include('../partials/footer') %>

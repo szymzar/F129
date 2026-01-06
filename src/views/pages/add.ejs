@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<h2>Dodaj film</h2>
+
+<% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+<% } %>
+
+<form action="/add" method="POST" class="form-row">
+    <input type="text" name="author" placeholder="Autor" value="<%= movie.author || '' %>">
+    <input type="text" name="title" placeholder="Tytuł" value="<%= movie.title || '' %>">
+    <input type="number" name="year" placeholder="Rok" value="<%= movie.year || '' %>">
+    <input type="text" name="genre" placeholder="Gatunek" value="<%= movie.genre || '' %>">
+    <input type="text" name="ageCategory" placeholder="Kategoria wiekowa" value="<%= movie.ageCategory || '' %>">
+    <textarea name="description" placeholder="Opis"><%= movie.description || '' %></textarea>
+    <textarea name="review" placeholder="Recenzja"><%= movie.review || '' %></textarea>
+    <button type="submit">Zapisz</button>
+</form>
+
+<%- include('../partials/footer') %>

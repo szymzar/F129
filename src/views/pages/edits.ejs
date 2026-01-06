@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<h2>Edytuj film</h2>
+
+<% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+<% } %>
+
+<form action="/movies/<%= movie._id %>/edit" method="POST">
+
+    <input type="text"name="title"value="<%= movie.title %>"required><br>
+
+    <input type="text" name="author"value="<%= movie.author %>"required><br>
+
+    <input type="number"name="year"value="<%= movie.year %>"required><br>
+
+    <input type="text"name="genre"value="<%= movie.genre %>"required><br>
+
+    <input type="text"name="ageCategory"value="<%= movie.ageCategory %>"required><br>
+
+    <textarea name="description"><%= movie.description %></textarea><br>
+
+    <textarea name="review"><%= movie.review %></textarea><br>
+
+    <button type="submit">Zapisz zmiany</button>
+</form>
+
+<%- include('../partials/footer') %>

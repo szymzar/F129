@@ -1,0 +1,35 @@
+# 1. Uruchomienie bazy danych MongoDB (za pierwszym razem)
+
+Ta komenda uruchomi bazę danych MongoDB w tle. Tworzy też miejsce, gdzie będą zapisywane dane, żeby nie zniknęły po wyłączeniu komputera. Ustawia też podstawowego użytkownika `user` z hasłem `password` dla bazy `movies`.
+
+docker run -d --name mongodb-projekt -p 27017:27017 -v mongodb-data:/data/db -e MONGO_INITDB_ROOT_USERNAME=user -e MONGO_INITDB_ROOT_PASSWORD=password -e MONGO_INITDB_DATABASE=movies mongo:6
+
+
+*   `docker run -d`: Uruchamia kontener w tle.
+*   `--name mongodb-projekt`: Nadaje kontenerowi nazwę.
+*   `-p 27017:27017`: Połączenie z bazą przez port 27017 na Twoim komputerze.
+*   `-v mongodb-data:/data/db`: Zapisywanie danych na stałe (wolumen).
+*   `-e MONGO_INITDB_ROOT_USERNAME=user -e MONGO_INITDB_ROOT_PASSWORD=password`: Ustawia użytkownika i hasło.
+*   `-e MONGO_INITDB_DATABASE=movies`: Określa domyślną bazę danych.
+*   `mongo:6`: Używa stabilnej wersji MongoDB (wersja 6).
+
+# 2. Sprawdzenie, czy baza działa
+
+docker ps
+
+# 3. Jak połączyć się z bazą w Node.js (w `src/data/connection.js`)
+
+mongodb://user:password@localhost:27017/movies
+
+# 4. Zatrzymanie bazy danych
+
+docker stop mongodb-projekt
+
+# 5. Ponowne uruchomienie bazy danych (jeśli była zatrzymana)
+
+docker start mongodb-projekt
+
+# 6. Usunięcie bazy danych (jeśli już jej nie potrzebujesz - usunie też dane!)
+
+docker rm -f mongodb-projekt
+
