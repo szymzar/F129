@@ -28,7 +28,7 @@ Na  komputerze muszą być zainstalowane:
 
 # Krok 2: Instalacja zależności
 
-W głównym folderze projektu (`projektszkolnynaocene-main`) uruchom komendę, aby zainstalować wszystkie wymagane pakiety:
+W głównym folderze projektu  uruchom komendę, aby zainstalować wszystkie wymagane pakiety:
 
 npm install
 

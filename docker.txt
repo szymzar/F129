@@ -25,11 +25,11 @@ mongodb://user:password@localhost:27017/movies
 
 docker stop mongodb-projekt
 
-# 5. Ponowne uruchomienie bazy danych (jeśli była zatrzymana)
+# 5. Ponowne uruchomienie bazy danych 
 
 docker start mongodb-projekt
 
-# 6. Usunięcie bazy danych (jeśli już jej nie potrzebujesz - usunie też dane!)
+# 6. Usunięcie bazy danych 
 
 docker rm -f mongodb-projekt
 
