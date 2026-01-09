@@ -22,13 +22,13 @@ Aplikacja webowa do zarządzania kolekcją filmów.
 
 # Krok 1: Wymagania wstępne
 
-Na  komputerze muszą być zainstalowane:
+Na komputerze muszą być zainstalowane:
 *   [Node.js](https://nodejs.org/) (wersja 18.x lub nowsza)
 *   [Docker](https://www.docker.com/products/docker-desktop/)
 
 # Krok 2: Instalacja zależności
 
-W głównym folderze projektu  uruchom komendę, aby zainstalować wszystkie wymagane pakiety:
+W głównym folderze projektu uruchom komendę, aby zainstalować wszystkie wymagane pakiety:
 
 npm install
 
