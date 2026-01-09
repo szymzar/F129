@@ -1,4 +1,4 @@
-# Projekt - Biblioteka Filmów
+# Projekt - Aplikacja Recenzji FIlmów
 
 Aplikacja webowa do zarządzania kolekcją filmów.
 
